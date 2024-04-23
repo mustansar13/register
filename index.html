@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registeration form</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    
+<div class="container">
+    <div class="formbox">
+        <h1 id="title">SignUp</h1>
+        <div class="underline" id="line"></div>
+     <form action=" ">
+        <div class="inputgroup">
+            <div class="inputfield " id="nameField">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" placeholder="Name">
+             </div>
+
+
+             <div class="inputfield">
+                <i class="fa-solid fa-at"></i>
+                <input type="email" placeholder="Email">
+             </div>
+
+
+             <div class="inputfield">
+                <i class="fa-solid fa-key"></i>
+                <input type="password" placeholder="password">
+             </div>
+        </div>
+        <p id="text">Lost Password</p>
+        <div class="btn">
+            <button type="button" id="signupBtn"> SignUp</button>
+            <button type="button" class="disable " id="signinBtn">SignIn</button>
+
+        </div>
+        
+    </form>
+    </div>
+</div>
+
+
+<script>
+    let signinBtn=document.getElementById('signinBtn');
+    let signupBtn=document.getElementById('signupBtn');
+    let text=document.getElementById('text');
+    let nameField=document.getElementById('nameField');
+    let title=document.getElementById('title');
+    let line=document.getElementById('line');
+
+  
+
+
+signinBtn.onclick=function(){
+    signupBtn.classList.add('disable')
+    signinBtn.classList.remove('disable')
+    text.innerHTML='Forgot Password'
+    nameField.style.maxHeight= '0'
+    title.innerHTML="Sign In"
+    line.style.transform = 'translateX(35px)';
+
+}
+
+signupBtn.onclick=function(){
+    signupBtn.classList.remove('disable')
+    signinBtn.classList.add('disable')
+    text.innerHTML='Password Suggestion'
+    nameField.style.maxHeight= '65px'
+    title.innerHTML="Sign Up"
+    line.style.transform = 'translateX(0)';
+
+}
+
+
+</script>
+</body>
+</html>
